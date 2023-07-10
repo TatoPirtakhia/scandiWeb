@@ -43,10 +43,8 @@ function GetProduct(props: GetProductProps) {
         <p>{id}</p>
         <p>{name}</p>
         <p>{`${price} $`}</p>
-        {hasDVD && <p>Contains DVD</p>}
-        {hasBook && <p>Contains Book</p>}
-        {hasDVD && <p>DVD Size: {props.data.DVD?.size}</p>}
-        {hasFurn && <p>Book Weight: {props.data.Book?.Weight}</p>}
+        {hasDVD && <p>Size: {props.data.DVD?.size} MB</p>}
+        {hasBook && <p>Weight: {props.data.Book?.Weight}KG</p>}
         {hasFurn && (
           <div className="flex gap-2">
             <p>Dimensions:</p>
