@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Product } from "../types";
 
 const sendData = async (data: any, type: string) => {
   try {
