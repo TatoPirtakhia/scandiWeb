@@ -1,4 +1,4 @@
-import { Product,  } from "../types";
+import { Product } from "../types";
 
 interface GetProductProps {
   data: Product;
@@ -11,21 +11,19 @@ function GetProduct(props: GetProductProps) {
   const { checkedProducts, index, handleCheckboxChange } = props;
 
   const checked = checkedProducts[index] ?? false;
-  const { id, name, price  } = props.data;
+  const { id, name, price } = props.data;
 
   let hasDVD = false;
   let hasBook = false;
   let hasFurn = false;
 
-  if ('DVD' in props.data) {
+  if ("DVD" in props.data) {
     hasDVD = true;
-  } else if ('Book' in props.data) {
+  } else if ("Book" in props.data) {
     hasBook = true;
-  }else  if ('Furniture' in props.data){
-     hasFurn = true;
+  } else if ("Furniture" in props.data) {
+    hasFurn = true;
   }
-    
-
 
   return (
     <div className="w-[300px] flex flex-col shadow-box p-6 rounded-md">
@@ -33,7 +31,7 @@ function GetProduct(props: GetProductProps) {
         <label className="container">
           <input
             type="checkbox"
-            id='delete-checkbox'
+            className="delete-checkbox"
             checked={checked}
             onChange={() => handleCheckboxChange(index)}
           />
@@ -49,7 +47,10 @@ function GetProduct(props: GetProductProps) {
         {hasFurn && (
           <div className="flex gap-2">
             <p>Dimensions:</p>
-            <p>{props.data.Furniture?.Height}x{props.data.Furniture?.Width}x{props.data.Furniture?.Length}</p>
+            <p>
+              {props.data.Furniture?.Height}x{props.data.Furniture?.Width}x
+              {props.data.Furniture?.Length}
+            </p>
           </div>
         )}
       </div>
