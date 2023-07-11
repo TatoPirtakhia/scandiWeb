@@ -9,10 +9,14 @@ const Routing = ({
   data,
   ids,
   setIds,
+  deleteIDS,
+  setData
 }: {
   data: Product[];
   setIds: React.Dispatch<React.SetStateAction<string[]>>;
   ids: string[];
+  deleteIDS: () => Promise<void>
+  setData: React.Dispatch<React.SetStateAction<Product[]>>
 }) => {
   return (
     <Routes>
@@ -21,7 +25,7 @@ const Routing = ({
         path="/Home"
         element={
           <Suspense>
-            <Home data={data} setIds={setIds} ids={ids} />
+            <Home data={data} setIds={setIds} ids={ids} deleteIDS={deleteIDS}/>
           </Suspense>
         }
       />
@@ -29,7 +33,7 @@ const Routing = ({
         path="/NewProduct"
         element={
           <Suspense>
-            <New />
+            <New setData={setData} data={data}/>
           </Suspense>
         }
       />
