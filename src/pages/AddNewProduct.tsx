@@ -124,6 +124,7 @@ function AddNewProduct(props: {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col items-start p-2 w-[350px]"
+        id='product_form'
       >
         <div className="mb-4 w-full flex justify-between ">
           <label htmlFor="SKU">SKU: </label>
