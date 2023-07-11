@@ -55,6 +55,7 @@ function AddNewProduct(props: {
           },
         ]);
       }
+      navigate('/Home')
     } else if (objectType === "Book") {
       const BookData = {
         id: data.id,
@@ -74,6 +75,7 @@ function AddNewProduct(props: {
           },
         ]);
       }
+      navigate('/Home')
     } else {
       const furnitureData = {
         id: data.id,
@@ -81,7 +83,7 @@ function AddNewProduct(props: {
         price: data.price,
         Furniture: data.Furniture,
       };
-      status = await sendData(furnitureData, "Book");
+      status = await sendData(furnitureData, "furniture");
       if (status === 201) {
         props.setData([
           ...props.data,
@@ -93,8 +95,9 @@ function AddNewProduct(props: {
           },
         ]);
       }
+      navigate('/Home')
     }
-    navigate('/Home')
+    
   };
   const Submit = () => {
     handleSubmit(onSubmit)();
@@ -127,10 +130,10 @@ function AddNewProduct(props: {
         id='product_form'
       >
         <div className="mb-4 w-full flex justify-between ">
-          <label htmlFor="SKU">SKU: </label>
+          <label htmlFor="sku">sku: </label>
           <input
             type="text"
-            id="SKU"
+            id="sku"
             className={`outline-none ml-4  border-[1px] rounded-md pl-2 ${
               errors && errors.id ? "border-[red]" : "border-[#DFE3FA] "
             }`}
@@ -163,9 +166,9 @@ function AddNewProduct(props: {
           />
         </div>
         <div>
-          <label htmlFor="objectType">Select Object Type: </label>
+          <label htmlFor="productType">Select Object Type: </label>
           <select
-            id="objectType"
+            id="productType"
             value={objectType}
             onChange={(e) => setObjectType(e.target.value)}
           >
