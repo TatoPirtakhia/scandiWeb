@@ -33,6 +33,7 @@ function GetProduct(props: GetProductProps) {
         <label className="container">
           <input
             type="checkbox"
+            id='delete-checkbox'
             checked={checked}
             onChange={() => handleCheckboxChange(index)}
           />
