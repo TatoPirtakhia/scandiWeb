@@ -34,7 +34,7 @@ function Home(props: {
       setCheckedProducts(Array(data.length).fill(false))
     }
   return (
-    <div className="h-full w-full flex flex-col items-center">
+    <div className="h-full w-full flex flex-col items-start">
       <nav className="flex w-full items-center mb-10   justify-between pt-5 pb-5 border-b-black border-b-[1px] ">
         <h1 className="roboto font-bold text-[20px]">Product List</h1>
         <div className={`flex gap-4 `}>
@@ -46,7 +46,7 @@ function Home(props: {
           </button>
         </div>
       </nav>
-      <div className="w-full flex justify-center gap-6 flex-wrap ">
+      <div className="w-full flex justify-center  xl:justify-start gap-6 flex-wrap ">
         {data.map((data: Product, index) => {
           return (
             <GetProduct

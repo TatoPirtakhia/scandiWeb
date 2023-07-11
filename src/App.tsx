@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center">
+    <div className="h-full w-full flex flex-col items-center pt-5">
      
       <div className="flex flex-wrap justify-center  w-[90%] pb-[100px]">
         <Routing data={data} setIds={setIds} setData={setData} ids={ids} deleteIDS={deleteIDS}/>
