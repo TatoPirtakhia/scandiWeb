@@ -112,7 +112,7 @@ function AddNewProduct(props: {
             className="roboto font-normal w-[40px] bg-slate-400 rounded-md text-white"
             onClick={Submit}
           >
-            save
+            Save
           </button>
           <button
             onClick={() => {
@@ -120,7 +120,7 @@ function AddNewProduct(props: {
             }}
             className="roboto font-normal text-white bg-red-500 p-1 rounded-md "
           >
-            cancel
+            Cancel
           </button>
         </div>
       </nav>
