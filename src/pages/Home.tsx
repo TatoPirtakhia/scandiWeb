@@ -13,7 +13,7 @@ function Home(props: {
   const navigate = useNavigate();
 
   const [checkedProducts, setCheckedProducts] = useState<boolean[]>(
-    Array(data.length).fill(false)
+    Array(data?.length).fill(false)
   );
 
   const handleCheckboxChange = (index: number) => {
